@@ -29,8 +29,7 @@ function validation()
     else if(password.value != confirmedPassword.value){
 
         error.innerHTML= "Error : Please confirm the correct password";
-        error.style.color =
-        "red";
+        error.style.color = "red";
     }
 
     else{
