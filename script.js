@@ -3,16 +3,13 @@ let email = document.getElementById("useremail");
 let password = document.getElementById("userpassword");
 let confirmedPassword = document.getElementById("comfirmPassword");
 
-let Uname ="";
-let Uemail ="";
-let Upassword="";
+let Username ="";
+let Useremail ="";
+let Userpassword="";
 
 let user = {};
 
-
-
 storedata();
-
 
 document.querySelector(".signup").addEventListener("click",(e)=>{
 
@@ -20,13 +17,9 @@ document.querySelector(".signup").addEventListener("click",(e)=>{
     validation();
 })
 
-
 function validation()
 
 {
-
-
-
     let error =  document.querySelector(".error");
     if(username.value == "" || email.value =="" || password.value == "" || confirmedPassword.value ==""){
        error.innerHTML= "Error : All the fields are mandatory";
@@ -39,28 +32,25 @@ function validation()
         error.style.color =
         "red";
     }
-      
-    
+
     else{
 
         error.innerHTML= "Successfully Signed Up!";
         error.style.color="green";
 
-         Uname = username.value;
-        Uemail = email.value;
-        Upassword = password.value;
+        Username = username.value;
+        Useremail = email.value;
+        Userpassword = password.value;
         
 
-        localStorage.setItem("userName",Uname);
-        localStorage.setItem("userEmail",Uemail);
-        localStorage.setItem("userPassword",Upassword);
+        localStorage.setItem("userName",Username);
+        localStorage.setItem("userEmail",Useremail);
+        localStorage.setItem("userPassword",Userpassword);
         setTimeout(getdetails,2000);
         setTimeout(reset,8000);
     }
 
 }
-
-
 
 function getdetails(){
 
@@ -80,15 +70,12 @@ function getdetails(){
           <p>Full Name : ${Name}</p>
           <p>Email : ${Email}</p>
           <p>Password : ${Password}</p>
-          <button class="btn logout" onclick="deleteInfo()">Logout</button>`
+          <button class="buttn logout" onclick="deleteInfo()">Logout</button>`
     ;
     }
-   
-
 }
 
-
-console.log(Uname);
+console.log(Username);
 
 function reset(){
 
@@ -117,5 +104,4 @@ function storedata(){
     
     }
     
-
     console.log(localStorage.getItem("user"));
